@@ -1,7 +1,9 @@
-# 開發完成之後...實戰GCP部署
+# 動手搞定GCP部署工作
 
 
 ### 目錄
+
+* [學習地圖](/#)
 
 * [開發流程](/#)
 
@@ -12,6 +14,10 @@
 * [實戰開一台機器]()
 
 * 
+
+## 學習地圖
+
+[WEB DEVELOPER ROADMAP 2019](https://github.com/goodjack/developer-roadmap-chinese)
 
 ## 開發流程
 
