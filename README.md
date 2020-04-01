@@ -5,7 +5,7 @@
 * [現在的開發長什麼樣子？](/#)
 
 
-		* [簡介目前常見的開發流程和專案架構](/#)
+    * [簡介目前常見的開發流程和專案架構](/#)
 
 
     * [簡介前端開發者對於部署認識的必要性](/#)
@@ -18,28 +18,27 @@
 * [GCP常用資源](/#)
 
 
-		* [Google App Engine (GAE)](/#)
+    * [Google App Engine (GAE)](/#)
 
 
-		* [Google Compute Engine (GCE)](/#)
+    * [Google Compute Engine (GCE)](/#)
 
 
-		* [Google Kubernetes Engine (GKE)](/#)
+    * [Google Kubernetes Engine (GKE)](/#)
 
 
-		* [Google Kubernetes Engine (GKE)](/#)
+    * [Google Kubernetes Engine (GKE)](/#)
 
 
-		* [Google SQL](/#)
+    * [Google SQL](/#)
 
 
-		* [Google Storage](/#)
+    * [Google Storage](/#)
 
 
+    * [Google gcloud SDK](/#)
 
-		* [Google gcloud SDK](/#)
 
-		
 
 * [動手做-在GCE開一台機器](/#)
 
