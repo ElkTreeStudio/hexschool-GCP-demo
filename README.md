@@ -39,7 +39,6 @@
     * [Google gcloud SDK](/#)
 
 
-
 * [動手做-在GCE開一台機器](/#)
 
     * [選擇你想要的機器](/#)
@@ -128,6 +127,17 @@
 ## 在GCE實戰開一台機器 
 
 ## Docker 化你的專案
+
+### 為什麼建議Docker化？
+
+1. 更快速的交付和部署
+2. 更輕鬆的遷移和擴展
+3. 更簡單的管理
+
+* [Docker 官網](https://dotblogs.com.tw/explooosion/2018/09/15/194754)
+* [《Docker —— 從入門到實踐­》正體中文版](https://legacy.gitbook.com/book/philipzheng/docker_practice/details)
+* [為什麼要使用 Docker？](https://philipzheng.gitbooks.io/docker_practice/content/introduction/why.html)
+* [Docker - 容器化 Node.js express](https://dotblogs.com.tw/explooosion/2018/09/15/194754)
 
 ## 使用GCR 管理Docker Image
 
