@@ -99,16 +99,22 @@
 
 ### 專案架構
 
-* 從MVC到MVVM？
+* 從MVC到前後端分離
 
-* 你應該知道
+    * 推薦文章：[跟著小明一起搞懂技術名詞：MVC、SPA 與 SSR](https://medium.com/@hulitw/introduction-mvc-spa-and-ssr-545c941669e9)
+
+* 漸漸地把前端和後端分開，當然現在組織越大的開發團隊有越多的分工角色，專案也分開，各自在專案中的專業技術也越來越複雜。
+
+    [WEB DEVELOPER ROADMAP 2019](https://github.com/goodjack/developer-roadmap-chinese)
 
 
 ### 前端開發者需要了解部署的重要性
 
+情境一：管Server的人非常好，也非常嚴謹，所有更新他必定是親自來，前端、API開發人員的更新都交給他統一上去。
 
+情境二：管Server的人同時要管好幾個服務，即便他定義了很多嚴謹的規範，但是他沒辦法每次都及時幫忙開發人員提交更新。
 
-[WEB DEVELOPER ROADMAP 2019](https://github.com/goodjack/developer-roadmap-chinese)
+情境三：根本沒有Server人員，只有一台機器各自表述。
 
 
 ## 機器
