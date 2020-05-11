@@ -128,7 +128,31 @@
 * Google SQL
 * Google Storage
 
-* gcloud SDK
+### gcloud SDK (Google Cloud SDK)
+
+* 安裝SDK方便操作 --> [安裝頁面](https://cloud.google.com/sdk/install)
+
+For Example: Linux & macOS:
+
+```bash
+curl https://sdk.cloud.google.com | bash
+```
+
+![gcloud SDK image1](./image/gcloud_sdk-1.png)
+
+![gcloud SDK image2](./image/gcloud_sdk-2.png)
+
+
+```bash
+exec -l $SHELL
+```
+
+```bash
+gcloud init
+```
+
+接著會需要登入你的google帳號跟選擇你的GCP專案。
+
 
 ## 在GCE實戰開一台機器 
 
