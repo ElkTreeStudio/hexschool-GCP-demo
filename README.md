@@ -46,7 +46,7 @@
 
 * 新增一個你自己的專案吧！
 
-    * [GCP](https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwjygvObnLDpAhUFwRYFHdJiATYYABABGgJ0bA&ohost=www.google.com&cid=CAESQeD2VsWW1VHMXkhOwueQLazDWeKGtKez2qUDrqDWWgoC_81K91-tLyYBHniEIq1B0KVHqWMzkP-hwBTnXQ1aco-9&sig=AOD64_1YHcV81ig-3Qdl2MIz2mW1N9-AXQ&q=&ved=2ahUKEwiv8OmbnLDpAhUmw4sBHSmXCOwQ0Qx6BAgYEAE&adurl=)
+    * [Google Cloud Platform](https://cloud.google.com)
 
 
 * Google App Engine (GAE)
