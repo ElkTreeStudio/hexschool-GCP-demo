@@ -75,15 +75,15 @@
 
     * [測試你的Docker跑不跑得起來](/#)
 
-* [網域設定](/#)
-
-    * [以godaddy來示範](/#)
-
 * [使用NGINX](/#)
 
     * [為什麼要用nginx？](/#)
 
     * [nginx指向設定](/#)
+
+* [網域設定](/#)
+
+    * [以godaddy來示範](/#)
 
 * [在Docker中操作git](/#)
 
@@ -234,13 +234,16 @@ git clone "https://github.com/ElkTreeStudio/hexschool-GCP-demo"
 
 ### 靜態IP設定
 
-
+> VPC 網路 > 外部IP位址 > 開啟靜態IP
 
 ### 防火牆設定
 
+設定 port 3000
+
+![firewall](./image/firewall.png)
 
 
-其實要從頭設定好一個完整的環境有時候很麻煩，運氣好的話你可以從頭到尾的安裝和運行都很順暢
+> 其實要從頭設定好一個完整的環境有時候很麻煩，運氣好的話你可以從頭到尾的安裝和運行都很順暢，然後快樂地啟用已經開發好的專案，但常常事與願違....
 
 
 ## Docker 化你的專案
@@ -256,16 +259,171 @@ git clone "https://github.com/ElkTreeStudio/hexschool-GCP-demo"
 * [為什麼要使用 Docker？](https://philipzheng.gitbooks.io/docker_practice/content/introduction/why.html)
 * [Docker - 容器化 Node.js express](https://dotblogs.com.tw/explooosion/2018/09/15/194754)
 
+
+4. 實作：
+
+* 寫一個Dockerfile
+
+```Dockerfile
+FROM node:10-alpine
+
+# Create app directory
+WORKDIR /usr/src/app
+
+# Install app dependencies
+COPY package*.json ./
+RUN apk --no-cache add --virtual builds-deps build-base python
+RUN npm install
+
+# Bundle app source
+COPY . .
+
+EXPOSE 3000
+CMD [ "node", "index.js" ]
+```
+
+* 建立一個Docker image
+
+```bash
+docker build -t gcr.io/[your_gcp_project_id]/[your_image_name]:[tag_name] $PWD
+```
+
+例如：
+
+```bash
+docker build -t gcr.io/static-shine-235605/1on1-admin-api:1.0.0 $PWD
+```
+
+* 在本機端測試一下是否可以正確執行
+
+```bash
+docker run -p 9090:3000 --name myapp -d gcr.io/static-shine-235605/1on1-admin-api:1.0.0
+```
+
 ## 使用GCR 管理Docker Image
+
+### 推上 GCP
+
+```bash
+gcloud docker -- push DOCKER_IMAGE_NAME:TAG
+```
 
 ## 在GCE中簡易地使用Docker
 
+
+### 從 Google Container Registry (GCR) 把 docker image 拉進來
+
+[Authentication methods](https://cloud.google.com/container-registry/docs/advanced-authentication)
+
+```bash
+gcloud auth configure-docker
+```
+
+使用gcloud 指令將GCR的image 拉進來
+
+```bash
+gcloud docker -- pull gcr.io/static-shine-235605/1on1-admin-api:1.0.0
+```
+
+執行
+
+```bash
+docker run -p 3000:3000 --name 1on1-admin-api -d gcr.io/static-shine-235605/1on1-admin-api:1.0.0
+```
+
 ## nginx 部署
+
+
+1. 安裝 nginx
+
+* 更新os
+
+```bat
+sudo apt-get update
+```
+
+* 安裝nginx
+
+```bat
+sudo apt-get install nginx -y
+```
+
+2. 確認nginx 狀態
+
+```bat
+ps auwx | grep nginx
+```
+
+3. nginx指向設定，修改設定檔
+
+```
+sudo vi /etc/nginx/sites-available/default
+```
+
+4. 修改設定如下：
+
+```default
+server_name yourdomain.com www.yourdomain.com;
+
+location / {
+    proxy_pass http://localhost:5000; #whatever port your app runs on
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection 'upgrade';
+    proxy_set_header Host $host;
+    proxy_cache_bypass $http_upgrade;
+}
+```
+
+5. 確認nginx config
+
+```bat
+sudo nginx -t
+```
+
+6. Restart nginx
+
+```bat
+sudo service nginx restart
+```
+
+7. Stop nginx
+
+```bat
+service nginx stop
+```
+
+8. Start nginx
+
+```bat
+service nginx start
+```
 
 ## 網域的設定
 
+* 以godaddy來示範
+
 ## 在Docker中使用git去做版本控制
 
-## 持續未完成可以探索的挑戰
+### 進入docker container操作
+
+```bat
+docker exec -it {docker container name} bash
+```
+
+### In Alpine linux like pm2-container
+
+* Alpine uses ash and not bash.
+
+```bat
+docker exec -it {docker container name} ash
+```
 
 
+## 還可以怎麼精進自己？
+
+* [學習docker-compose](https://docs.docker.com/compose/)
+
+* 學習怎麼一次部署前後端和DB
+    
+* 為自己的網站設置SSL
