@@ -268,15 +268,13 @@ docker run -p 3000:3000 --name hexschool_app -d gcr.io/elk-tree-studio/hexschool
 1. 安裝 nginx
 
 
-* 安裝nginx
-
-```bat
+```bash
 sudo apt-get install nginx -y
 ```
 
 2. 確認nginx 狀態
 
-```bat
+```bash
 ps auwx | grep nginx
 ```
 
@@ -288,7 +286,7 @@ sudo vi /etc/nginx/sites-available/default
 
 4. 修改設定如下：
 
-```default
+```nginx
 server_name yourdomain.com www.yourdomain.com;
 
 location / {
@@ -303,25 +301,25 @@ location / {
 
 5. 確認nginx config
 
-```bat
+```bash
 sudo nginx -t
 ```
 
 6. Restart nginx
 
-```bat
+```bash
 sudo service nginx restart
 ```
 
 7. Stop nginx
 
-```bat
+```bash
 service nginx stop
 ```
 
 8. Start nginx
 
-```bat
+```bash
 service nginx start
 ```
 
