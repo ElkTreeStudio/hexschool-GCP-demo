@@ -1,99 +1,13 @@
 # 動手搞定GCP部署工作
 
-### 目錄
+> :calendar: Updated Date: 2020-05-13
 
-* [現在的開發長什麼樣子？](https://github.com/ElkTreeStudio/hexschool-GCP-demo#%E7%8F%BE%E5%9C%A8%E7%9A%84%E9%96%8B%E7%99%BC%E9%95%B7%E4%BB%80%E9%BA%BC%E6%A8%A3%E5%AD%90)
+> :european_post_office: Author: [YiChun Sung](https://github.com/yichunsung)
 
+> :e-mail: [ycsung.r@elk-tree.studio](ycsung.r@elk-tree.studio)
 
-    * [開發流程和專案架構](https://github.com/ElkTreeStudio/hexschool-GCP-demo#%E5%B0%88%E6%A1%88%E6%9E%B6%E6%A7%8B)
+![Elk Tree Studio](./image/logo_big.png)
 
-
-    * [我們在什麼位置？](https://github.com/ElkTreeStudio/hexschool-GCP-demo#%E6%88%91%E5%80%91%E5%9C%A8%E4%BB%80%E9%BA%BC%E4%BD%8D%E7%BD%AE)
-
-
-    * [簡介前端開發者對於部署認識的必要性](https://github.com/ElkTreeStudio/hexschool-GCP-demo#%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC%E8%80%85%E9%9C%80%E8%A6%81%E4%BA%86%E8%A7%A3%E9%83%A8%E7%BD%B2%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7)
-
-
-
-* [GCP常用資源](/#)
-
-
-    * [Google App Engine (GAE)](/#)
-
-
-    * [Google Compute Engine (GCE)](/#)
-
-
-    * [Google Kubernetes Engine (GKE)](/#)
-
-
-    * [Google Kubernetes Engine (GKE)](/#)
-
-
-    * [Google SQL](/#)
-
-
-    * [Google Storage](/#)
-
-
-    * [Google gcloud SDK](/#)
-
-
-* [動手做-在GCE開一台機器](/#)
-
-    * [選擇你想要的機器](/#)
-
-    * [靜態IP設定](/#)
-
-    * [防火牆設定](/#)
-
-* [安裝你的機器](/#)
-
-    * [git](/#)
-
-    * [docker](/#)
-
-    * [nginx](/#)
-
-* [Docker化你的專案](/#)
-
-    * [為什麼建議Docker化](/#)
-
-    * [撰寫簡單的Dockerfile](/#)
-
-    * [打包一個image](/#)
-
-    * [測試Docker](/#)
-
-* [使用GCR 管理Docker Image](/#)
-
-    * [推上去GCP](/#)
-
-* [在GCE中簡單地使用Docker](/#)
-
-    * [把你的image拉下來](/#)
-
-    * [測試你的Docker跑不跑得起來](/#)
-
-* [使用NGINX](/#)
-
-    * [為什麼要用nginx？](/#)
-
-    * [nginx指向設定](/#)
-
-* [網域設定](/#)
-
-    * [以godaddy來示範](/#)
-
-* [在Docker中操作git](/#)
-
-* [還可以怎麼精進自己？](/#)
-
-    * [學習docker-compose](/#)
-
-    * [學習怎麼一次部署前後端和DB](/#)
-		
-    * [為自己的網站設置SSL](/#)
 
 ## 現在的開發長什麼樣子？
 
@@ -129,9 +43,10 @@
 
 ## GCP常用資源介紹
 
+
 * 新增一個你自己的專案吧！
 
-    * [Google Cloud Platform](https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwjygvObnLDpAhUFwRYFHdJiATYYABABGgJ0bA&ohost=www.google.com&cid=CAESQeD2VsWW1VHMXkhOwueQLazDWeKGtKez2qUDrqDWWgoC_81K91-tLyYBHniEIq1B0KVHqWMzkP-hwBTnXQ1aco-9&sig=AOD64_1YHcV81ig-3Qdl2MIz2mW1N9-AXQ&q=&ved=2ahUKEwiv8OmbnLDpAhUmw4sBHSmXCOwQ0Qx6BAgYEAE&adurl=)
+    * [GCP](https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwjygvObnLDpAhUFwRYFHdJiATYYABABGgJ0bA&ohost=www.google.com&cid=CAESQeD2VsWW1VHMXkhOwueQLazDWeKGtKez2qUDrqDWWgoC_81K91-tLyYBHniEIq1B0KVHqWMzkP-hwBTnXQ1aco-9&sig=AOD64_1YHcV81ig-3Qdl2MIz2mW1N9-AXQ&q=&ved=2ahUKEwiv8OmbnLDpAhUmw4sBHSmXCOwQ0Qx6BAgYEAE&adurl=)
 
 
 * Google App Engine (GAE)
@@ -291,13 +206,13 @@ docker build -t gcr.io/[your_gcp_project_id]/[your_image_name]:[tag_name] $PWD
 例如：
 
 ```bash
-docker build -t gcr.io/static-shine-235605/1on1-admin-api:1.0.0 $PWD
+docker build -t gcr.io/elk-tree-studio/hexschool_demo:0.1.0 $PWD
 ```
 
 * 在本機端測試一下是否可以正確執行
 
 ```bash
-docker run -p 9090:3000 --name myapp -d gcr.io/static-shine-235605/1on1-admin-api:1.0.0
+docker run -p 3000:3000 --name hexschool_app -d gcr.io/elk-tree-studio/hexschool_demo:0.1.0
 ```
 
 ## 使用GCR 管理Docker Image
@@ -308,7 +223,23 @@ docker run -p 9090:3000 --name myapp -d gcr.io/static-shine-235605/1on1-admin-ap
 gcloud docker -- push DOCKER_IMAGE_NAME:TAG
 ```
 
+例如:
+
+```bash
+gcloud docker -- push gcr.io/elk-tree-studio/hexschool_demo:0.1.0
+```
+
 ## 在GCE中簡易地使用Docker
+
+
+### 安裝Docker 
+
+* 從docker.io 安裝 docker
+
+```bat
+sudo apt-get install docker.io
+```
+
 
 
 ### 從 Google Container Registry (GCR) 把 docker image 拉進來
@@ -322,13 +253,13 @@ gcloud auth configure-docker
 使用gcloud 指令將GCR的image 拉進來
 
 ```bash
-gcloud docker -- pull gcr.io/static-shine-235605/1on1-admin-api:1.0.0
+gcloud docker -- pull gcr.io/elk-tree-studio/hexschool_demo:0.1.0
 ```
 
-執行
+執行:
 
 ```bash
-docker run -p 3000:3000 --name 1on1-admin-api -d gcr.io/static-shine-235605/1on1-admin-api:1.0.0
+docker run -p 3000:3000 --name hexschool_app -d gcr.io/elk-tree-studio/hexschool_demo:0.1.0
 ```
 
 ## nginx 部署
@@ -336,11 +267,6 @@ docker run -p 3000:3000 --name 1on1-admin-api -d gcr.io/static-shine-235605/1on1
 
 1. 安裝 nginx
 
-* 更新os
-
-```bat
-sudo apt-get update
-```
 
 * 安裝nginx
 
@@ -407,7 +333,7 @@ service nginx start
 
 ### 進入docker container操作
 
-```bat
+```bash
 docker exec -it {docker container name} bash
 ```
 
@@ -415,7 +341,7 @@ docker exec -it {docker container name} bash
 
 * Alpine uses ash and not bash.
 
-```bat
+```bash
 docker exec -it {docker container name} ash
 ```
 
