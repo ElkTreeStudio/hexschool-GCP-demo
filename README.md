@@ -131,7 +131,7 @@
 
 * 新增一個你自己的專案吧！
 
-    [Google Cloud Platform](https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwjygvObnLDpAhUFwRYFHdJiATYYABABGgJ0bA&ohost=www.google.com&cid=CAESQeD2VsWW1VHMXkhOwueQLazDWeKGtKez2qUDrqDWWgoC_81K91-tLyYBHniEIq1B0KVHqWMzkP-hwBTnXQ1aco-9&sig=AOD64_1YHcV81ig-3Qdl2MIz2mW1N9-AXQ&q=&ved=2ahUKEwiv8OmbnLDpAhUmw4sBHSmXCOwQ0Qx6BAgYEAE&adurl=)
+    * [Google Cloud Platform](https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwjygvObnLDpAhUFwRYFHdJiATYYABABGgJ0bA&ohost=www.google.com&cid=CAESQeD2VsWW1VHMXkhOwueQLazDWeKGtKez2qUDrqDWWgoC_81K91-tLyYBHniEIq1B0KVHqWMzkP-hwBTnXQ1aco-9&sig=AOD64_1YHcV81ig-3Qdl2MIz2mW1N9-AXQ&q=&ved=2ahUKEwiv8OmbnLDpAhUmw4sBHSmXCOwQ0Qx6BAgYEAE&adurl=)
 
 
 * Google App Engine (GAE)
@@ -154,9 +154,9 @@
 
 * Google Storage
 
-### gcloud SDK (Google Cloud SDK)
+* gcloud SDK (Google Cloud SDK)
 
-* 安裝SDK方便操作 --> [安裝頁面](https://cloud.google.com/sdk/install)
+    * 安裝SDK方便操作 --> [安裝頁面](https://cloud.google.com/sdk/install)
 
 For Example: Linux & macOS:
 
@@ -179,8 +179,69 @@ gcloud init
 
 接著會需要登入你的google帳號跟選擇你的GCP專案。
 
+你可以輸入指令看一下當前的專案選擇和你現在的登入帳號
+
+```bash
+gcloud config list
+```
+
+* 更多使用者文件： [Google Cloud SDK documentation](https://cloud.google.com/sdk/docs)
+
 
 ## 在GCE實戰開一台機器 
+
+### 在Google Compute Engine (GCE)中設定一台機器
+
+* 開一開新的vm，選擇OS (我用Ubuntu做範例，大家可以選擇自己熟悉的)
+
+* 進去vm的方式有很多，有最簡單的利用瀏覽器進去，也可以利用ssh直接連線或是用gcloud SDK連線ssh進去。
+
+用 gcloud SDK進去的方式：
+
+```bash
+gcloud beta compute ssh --zone "YOUR_ZONE" "VM_NAME" --project "PROJECT_ID"
+```    
+
+* 先安裝必要的東西 - 複雜版
+
+1. 先更新 apt
+
+```bash
+sudo apt-get update
+```
+
+2. 安裝node.js/npm
+
+```bash
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+
+sudo apt-get install nodejs
+
+node --version
+```
+
+3. 安裝其他你想安裝的環境 例如 NGINX 等等
+
+```bash
+sudo apt-get install nginx -y
+```
+
+4. 把你的專案拉下來吧！
+
+```bash
+git clone "https://github.com/ElkTreeStudio/hexschool-GCP-demo"
+``` 
+
+### 靜態IP設定
+
+
+
+### 防火牆設定
+
+
+
+其實要從頭設定好一個完整的環境有時候很麻煩，運氣好的話你可以從頭到尾的安裝和運行都很順暢
+
 
 ## Docker 化你的專案
 
