@@ -111,7 +111,7 @@
 
 ![ex2](./image/system.png)
 
-![ex3](./background.jpg)
+![ex3](./image/background.jpg)
 
 ### 我們在什麼位置？
 
