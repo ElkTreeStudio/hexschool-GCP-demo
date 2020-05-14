@@ -34,11 +34,25 @@
 
 ### 前端開發者需要了解部署的重要性
 
-情境一：管Server的人非常好，也非常嚴謹，所有更新他必定是親自來，前端、API開發人員的更新都交給他統一上去。
+* 情境一：管Server的人非常好，也非常嚴謹，所有更新他必定是親自來，前端、API開發人員的更新都交給他統一上去。
 
-情境二：管Server的人同時要管好幾個服務，即便他定義了很多嚴謹的規範，但是他沒辦法每次都及時幫忙開發人員提交更新。
+* 情境二：管Server的人同時要管好幾個服務，即便他定義了很多嚴謹的規範，但是他沒辦法每次都及時幫忙開發人員提交更新。
 
-情境三：根本沒有Server人員，只有一台機器各自表述。
+* 情境三：根本沒有Server人員，只有一台機器各自表述。
+
+* 你應該要多瞭解一些他們的事情！
+
+### 關於Linux 
+
+* 認識Linux也許會是精進自己的第一步，試試看吧！
+
+* 台灣 Linux 推薦網站:
+
+    * [鳥哥的 Linux 私房菜](http://linux.vbird.org/)
+
+    * [酷！學園討論區](http://phorum.study-area.org/)
+
+    * SayYA 資訊站(已結束)
 
 
 ## GCP常用資源介紹
@@ -103,7 +117,7 @@ gcloud config list
 * 更多使用者文件： [Google Cloud SDK documentation](https://cloud.google.com/sdk/docs)
 
 
-## 在GCE實戰開一台機器 
+## 在GCE實戰開一台機器
 
 ### 在Google Compute Engine (GCE)中設定一台機器
 
@@ -264,6 +278,18 @@ docker run -p 3000:3000 --name hexschool_app -d gcr.io/elk-tree-studio/hexschool
 
 ## nginx 部署
 
+0. 為什麼要使用nginx
+
+    * 安全設定
+
+    * SSL憑證
+
+    * 多網域的設定
+
+    * 靜態資源快取
+
+    * 延伸閱讀： [Nginx：高效能的 Web 伺服器、反向代理、負載平衡](https://noob.tw/nginx/), 
+
 
 1. 安裝 nginx
 
@@ -345,6 +371,12 @@ docker exec -it {docker container name} ash
 
 
 ## 還可以怎麼精進自己？
+
+* 更精進Docker
+
+    * [用30天來介紹和使用 Docker](https://ithelp.ithome.com.tw/users/20103456/ironman/1320)
+
+    * [Docker 基本使用：看完就會架 docker 化的服務](https://ithelp.ithome.com.tw/articles/10205481)
 
 * [學習docker-compose](https://docs.docker.com/compose/)
 
