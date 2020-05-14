@@ -58,7 +58,7 @@
 
 * 挑一個順眼的玩玩看！
 
-[linux_list](./image/linux_list.png)
+![linux_list](./image/linux_list.png)
 
 
 ## GCP常用資源介紹
