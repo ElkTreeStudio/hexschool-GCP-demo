@@ -50,6 +50,8 @@
 
     * [鳥哥的 Linux 私房菜](http://linux.vbird.org/)
 
+    * [PTT Linux板](https://www.ptt.cc/bbs/Linux/index.html)
+
     * [酷！學園討論區](http://phorum.study-area.org/)
 
     * SayYA 資訊站(已結束)
